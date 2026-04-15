@@ -6,6 +6,8 @@ A retrieval-augmented generation (RAG) system that answers natural language ques
 
 📺 [Watch the 5-minute project walkthrough](#) · [Watch the frontend demo](#)
 
+[![RepoHero — 5-minute walkthrough](https://img.youtube.com/vi/cM4_ZCd2KdE/maxresdefault.jpg)](https://youtu.be/cM4_ZCd2KdE)
+
 ---
 
 ## What It Does
@@ -18,7 +20,7 @@ The system is designed around a core insight: getting good answers from a codeba
 
 ## Architecture
 
-
+![RepoHero Architecture](assets/architecture.png)
 
 ### Key Components
 
