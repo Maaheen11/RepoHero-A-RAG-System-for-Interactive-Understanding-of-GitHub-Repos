@@ -22,7 +22,8 @@ def _chat_answer(agent: RepoHero, query: str, top_k: int = 5) -> tuple[str, list
     """
     Same retrieval + LLM steps as RepoHero.chat(), but non-interactive (chat() uses input/print/stream).
     """
-    retrieved_knowledge = agent.retrieve(query, top_k=top_k)
+    rewritten_query = agent.rewrite_query(query)
+    retrieved_knowledge = agent.retrieve(rewritten_query, top_k=top_k)
 
     context_text = "\n".join(
         f"[source:{item['metadata'].get('file_path', 'unknown')}]\n{item['chunk']}"
@@ -70,7 +71,7 @@ def _agent_for_repo(repo_path: str) -> RepoHero:
     repo_key = hashlib.md5(repo_path.encode("utf-8")).hexdigest()
     db_path = CHROMA_ROOT / repo_key
     db_path.mkdir(parents=True, exist_ok=True)
-    return RepoHero(db_path=str(db_path))
+    return RepoHero(db_path=str(db_path), llm_model="llama3.1:8b")
 
 
 _state: dict[str, Any] = {
