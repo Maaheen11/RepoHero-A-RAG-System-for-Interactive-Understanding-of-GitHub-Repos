@@ -4,9 +4,7 @@ A retrieval-augmented generation (RAG) system that answers natural language ques
 
 **Final accuracy: 80% across 130 questions on three real-world libraries (FastAPI, Pydantic, Requests).**
 
-📺 [Watch the 5-minute project walkthrough](#) · [Watch the frontend demo](#)
-
-[![RepoHero — 5-minute walkthrough](https://img.youtube.com/vi/cM4_ZCd2KdE/maxresdefault.jpg)](https://youtu.be/cM4_ZCd2KdE)
+📺 [Watch the 5-minute project walkthrough](https://youtu.be/cM4_ZCd2KdE)(#) · [Watch the frontend demo](#)
 
 ---
 
