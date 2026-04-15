@@ -4,11 +4,8 @@ A retrieval-augmented generation (RAG) system that answers natural language ques
 
 **Final accuracy: 80% across 130 questions on three real-world libraries (FastAPI, Pydantic, Requests).**
 
-📺 [Watch the 5-minute project walkthrough](#) · [Watch the frontend demo](#)
+📺 [Watch the 5-minute project walkthrough](https://youtu.be/cM4_ZCd2KdE) · [Watch the frontend demo](#)
 
-[![RepoHero — 5-minute walkthrough](https://img.youtube.com/vi/cM4_ZCd2KdE/maxresdefault.jpg)](https://youtu.be/cM4_ZCd2KdE)
-
----
 
 ## What It Does
 
@@ -16,7 +13,7 @@ RepoHero ingests a Python repository, chunks it into semantically meaningful uni
 
 The system is designed around a core insight: getting good answers from a codebase isn't just a generation problem, it's a retrieval precision problem. A general-purpose embedding model can pull in chunks that *look* relevant but miss the actual logic. RepoHero addresses this with a two-stage retrieval pipeline.
 
----
+
 
 ## Architecture
 
@@ -37,7 +34,6 @@ The system is designed around a core insight: getting good answers from a codeba
 
 **Web Interface**: React + Vite frontend, Flask backend. Users enter a repository path, click "Index Repository," and ask questions in a chat interface.
 
----
 
 ## Results
 
@@ -50,7 +46,6 @@ The system is designed around a core insight: getting good answers from a codeba
 
 The baseline uses `BGE-base-en-v1.5` served through Ollama, retrieving the top-5 chunks directly from ChromaDB. The two-stage system improves meaningfully on Pydantic (+12.5%), the most complex and internally similar codebase, where precision in retrieval matters most. The slight dip on Requests is attributable to many handler functions with similar structure, making it hard for either stage to confidently distinguish candidates.
 
----
 
 ## Stack
 
@@ -65,7 +60,6 @@ The baseline uses `BGE-base-en-v1.5` served through Ollama, retrieving the top-5
 | Backend | Flask |
 | Frontend | React + Vite |
 
----
 
 ## Setup
 
@@ -114,7 +108,6 @@ python test.py --biencoder  # two-stage
 # Results written to output/results.csv
 ```
 
----
 
 ## Project Structure
 
@@ -130,7 +123,6 @@ RepoHero/
 └── data/            # Evaluation CSV files (question, expected_answer)
 ```
 
----
 
 ## Team
 
