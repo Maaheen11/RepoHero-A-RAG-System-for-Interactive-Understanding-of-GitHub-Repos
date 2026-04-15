@@ -1,0 +1,51 @@
+question,expected_answer
+How was a simple HTTP GET request sent to a URL?,A GET request can be sent by calling the get function with the target URL which internally constructs and dispatches a request and returns a response object.
+How was an HTTP POST request sent with form data?,A POST request can be sent using the post function and passing a dictionary to the data parameter which is encoded as form data before transmission.
+How was JSON data transmitted in an HTTP request?,JSON data can be sent by passing a dictionary to the json parameter which automatically serializes the object and sets the application/json header.
+How were query parameters included in a GET request?,Query parameters can be included by providing a dictionary to the params argument which is appended to the request URL as a query string.
+How was the response body retrieved after sending a request?,The response body can be accessed through the response.text property for decoded text or response.content for raw bytes.
+How was a JSON response parsed after receiving a response?,The response.json method parses the response body and returns a Python object representing the JSON content.
+How was the HTTP status code inspected after a request?,The HTTP status code can be obtained using the response.status_code attribute.
+How were request headers provided for a single HTTP request?,Custom headers can be supplied by passing a dictionary to the headers parameter when creating the request.
+How were default headers applied across multiple requests?,Default headers can be defined on a session object through the session.headers dictionary which is applied to all outgoing requests.
+How was persistent connection reuse achieved across multiple requests?,Connection reuse is achieved by creating a session object which manages connection pooling and persistent settings.
+How were cookies persisted across multiple requests?,Cookies are stored automatically in a session object and reused for subsequent requests made through that session.
+How was automatic redirect handling implemented for requests?,Redirects are followed automatically by the client and previous responses are stored in the response.history attribute.
+How was redirect behavior disabled for a request?,Redirect behavior can be disabled by passing allow_redirects=False when sending the request.
+How were connection and read timeouts specified for requests?,Timeouts can be configured by passing a timeout parameter which may be a single value or a tuple specifying connect and read timeouts.
+How were network related errors represented during requests?,Network errors are raised as exceptions derived from RequestException such as ConnectionError or Timeout.
+How was an HTTP error converted into an exception?,Calling response.raise_for_status raises an exception when the HTTP status code indicates a client or server error.
+How was SSL certificate verification controlled during a request?,SSL verification is enabled by default but can be disabled by setting verify=False or pointing to a certificate bundle.
+How were files uploaded using an HTTP request?,File uploads are supported by passing file objects in the files parameter which constructs a multipart form request.
+How were large responses streamed instead of downloaded entirely?,Streaming can be enabled by passing stream=True and iterating over response.iter_content to process chunks incrementally.
+How were response headers accessed after receiving a response?,Response headers are available through the response.headers attribute which behaves like a case insensitive dictionary.
+How was a prepared request constructed before sending?,A Request object can be created and then converted to a PreparedRequest using the prepare method.
+How was a prepared request transmitted manually?,A prepared request can be transmitted using the send method of a session object.
+How was authentication attached to an HTTP request?,Authentication credentials can be provided using the auth parameter which accepts a tuple or authentication handler.
+How was bearer token authentication included in requests?,Bearer authentication can be implemented by adding an Authorization header containing the bearer token.
+How were proxy servers configured for outgoing requests?,Proxy configuration can be provided as a dictionary mapping protocol names to proxy URLs passed through the proxies parameter.
+How was connection pooling implemented internally?,Connection pooling is implemented through transport adapters attached to session objects which reuse open connections.
+How was a transport adapter mounted for specific URL prefixes?,Adapters can be mounted using the mount method of a session object specifying the prefix and adapter instance.
+How was request data encoded as application/x-www-form-urlencoded?,When the data parameter receives a dictionary it is automatically encoded as form data before being transmitted.
+How were Unicode characters handled in request parameters?,Unicode characters are automatically encoded and URL escaped when constructing the request.
+How was the final destination URL determined after redirects?,The final resolved URL can be obtained through the response.url attribute.
+How were request and response events intercepted using hooks?,Hooks can be registered on a session allowing callback functions to run during request or response processing.
+How was response streaming performed line by line?,The iter_lines method of the response object allows iteration over the response stream line by line.
+How were binary response payloads accessed?,Binary payloads can be accessed directly through the response.content attribute.
+How was a request sent using a context managed session?,A session can be used within a with statement ensuring the underlying connections are closed automatically.
+How were cookies manually supplied to a request?,Cookies can be supplied through the cookies parameter which accepts a dictionary of cookie values.
+How was the request body transmitted as raw bytes?,Raw bytes can be provided to the data parameter which will be sent without additional encoding.
+How was the request method determined when dispatching a request?,The request method is determined by the method argument passed to the underlying request function.
+How was an OPTIONS request performed?,An OPTIONS request can be executed using the options function which sends a request with the HTTP OPTIONS method.
+How was a PUT request performed?,A PUT request can be executed by calling the put function with the desired URL and optional payload.
+How was a DELETE request executed against a resource?,The delete function sends an HTTP DELETE request to the specified resource URL.
+How was multipart request data constructed internally?,Multipart data is generated automatically when file objects are provided through the files parameter.
+How was a request retried after transient failures?,Retry behavior can be configured by attaching a retry strategy to a transport adapter.
+How was a request URL constructed from parameters?,The base URL is combined with encoded query parameters to produce the final request URL.
+How were request headers normalized internally?,Headers are stored in a case insensitive structure ensuring consistent access regardless of capitalization.
+How was response encoding determined automatically?,Response encoding is inferred from the Content-Type header or detected heuristically.
+How was compressed response content handled?,Compressed responses such as gzip or deflate are automatically decompressed by the client.
+How were invalid URLs handled during request construction?,Invalid or incomplete URLs result in exceptions such as InvalidURL or MissingSchema.
+How was connection reuse handled across different hosts?,Connection pools are maintained per host allowing efficient reuse for repeated requests.
+How was request preparation separated from transmission?,The client separates preparation and sending through Request and PreparedRequest abstractions.
+How was request state maintained across multiple calls?,Session objects maintain shared state including cookies headers and connection pools.
